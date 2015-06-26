@@ -1,0 +1,4 @@
+$("#<%= @recepy.id.to_s %>.form-edit ").fadeOut('slow', function(){
+  $("#<%= @recepy.id.to_s %>.recepy-container").html("<%= escape_javascript(render partial: 'recepies/partials/recepy_line_item', locals: { recepy: @recepy }) %>");
+});
+$("#<%= @recepy.id.to_s %>.recepy-container").fadeIn('slow');

@@ -1,0 +1,8 @@
+<%= recepy.title.titleize %> <br/>
+<%= recepy.ingredients.to_s %> <br/>
+<%= recepy.description.to_s %> </br>
+<%= link_to 'edit', edit_recepy_path(recepy), remote: true %>
+<%= link_to 'delete', recepy_path(recepy), method: :delete, remote: true %>
+<div class='form-edit' id="<%= recepy.id %>"></div>
+<hr/>
+<br/>
