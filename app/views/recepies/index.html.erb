@@ -1,0 +1,11 @@
+<%= link_to 'new recepies', new_recepy_path, remote: true %>
+
+<div class='form-create' id='inner-popup'></div>
+
+<% if @recepies.any? %>
+  <h1> Recepies </h1>
+  <div class='recepies-container'>
+    <%= render partial: 'recepies/partials/recepies_index', locals: { recepies: @recepies } %>
+  </div>
+<% end %>
+

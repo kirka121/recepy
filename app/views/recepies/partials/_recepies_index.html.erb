@@ -1,0 +1,5 @@
+<% recepies.each do |recepy| %>
+  <div class='recepy-container' id="<%= recepy.id %>">
+    <%= render partial: 'recepies/partials/recepy_line_item', locals: { recepy: recepy } %>
+  </div>
+<% end %>
