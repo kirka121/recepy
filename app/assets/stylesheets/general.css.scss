@@ -1,3 +1,30 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  max-height: 100%;
+}
+.main-container{
+  width: 100%;
+  height: 100%;
+  #sidebar-wrapper{
+    background-color: #192227;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+  }
+  .content{
+    position: absolute;
+    width: 85%;
+    left: 15%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+  }
+}
 .form-edit{
   display: none;
   border: 1px solid black;
@@ -5,4 +32,34 @@
 .form-create{
   display: none;
   border: 1px solid blue;
+}
+
+ul.sidebar-nav{
+  list-style-type: none;
+  padding: 0;
+  li{
+    padding: 7px;
+    background-color: #192227;
+    color: #495F77;
+  }
+  li:hover{
+    a{
+      color: white;
+    }
+    background-color: #495F77;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+  .header{
+    background-color: #23282E;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+  }
+  .active{
+    color: #ffbe8a;
+    border-left: 2px solid #f06c00;
+    background-color: #3D4857;
+  }
 }
