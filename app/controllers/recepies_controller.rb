@@ -59,6 +59,6 @@ class RecepiesController < ApplicationController
   private
 
   def permitted_recepy_params
-    params.require(:recepy).permit(:title, :ingredients, :description)
+    params.require(:recepy).permit(:title, :description, :category_id, ingredients_attributes: [:description, :quantity, :quantity_type])
   end
 end

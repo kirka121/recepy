@@ -1,6 +1,12 @@
-<%= recepy.title.titleize %> <br/>
-<%= %> <br/>
-<%= recepy.description.to_s %> </br>
+<strong>Title:</strong> <%= recepy.title.titleize %> <br/>
+<% if recepy.ingredients.any? %>
+<strong>Ingredients:</strong>
+  <% recepy.ingredients.each do |ingredient| %>
+    <%= "#{ingredient.quantity.to_s} #{ingredient.quantity_type.to_s} #{ingredient.description.to_s}, " %>
+  <% end %>
+<% end %>
+<br/>
+<strong>Description: </strong><%= recepy.description.to_s %> </br>
 <%= link_to 'edit', edit_recepy_path(recepy), remote: true %>
 <%= link_to 'delete', recepy_path(recepy), method: :delete, remote: true, data: { confirm: 'Are you sure?'} %>
 <div class='form-modal form-edit' id="<%= recepy.id %>"></div>
