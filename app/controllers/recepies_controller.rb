@@ -10,6 +10,7 @@ class RecepiesController < ApplicationController
 
   def create
     @recepy = Recepy.new
+
     @recepy.assign_attributes permitted_recepy_params
 
     if @recepy.save

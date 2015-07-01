@@ -15,4 +15,5 @@
 //= require bootstrap-sprockets
 //= require sweet-alert
 //= require turbolinks
+//= require nested_form_fields
 //= require_tree .

@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'sweetalert-rails'
 gem 'font-awesome-rails'
-
+gem 'nested_form_fields'
 
 #javascript
 gem 'gon'

@@ -1,9 +1,9 @@
 <%= form_for setup_recepy(@recepy), remote: true do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %> <br/>
-  <h4>Ingredients</h4>
-  <%= f.fields_for :ingredients  do |ff| %> <br/>
-    <div class="links">
+  <h5>Ingredients: </h5>
+  <%= f.nested_fields_for :ingredients  do |ff| %> <br/>
+    <div class="ingredient">
       <%= ff.label :description %>
       <%= ff.text_field :description %> <br/>
 
@@ -11,7 +11,7 @@
       <%= ff.text_field :quantity %> <br/>
 
       <%= ff.label :quantity_type %>
-      <%= ff.text_field :quantity_type %> <br/>
+      <%= ff.select(:quantity_type, Ingredient.quantity_types.keys.to_a.map { |w| [w.humanize, w] }, {}, { class: '', id: '' } ) %> <br/>
 
       <% if ff.object.persisted? %>
         <%= ff.check_box :_destroy %>
@@ -19,8 +19,15 @@
       <% end %>
     </div>
   <% end %>
+  <br/>
+  <br/>
+  <%= f.add_nested_fields_link :ingredients %>
+  <br/>
   <%= f.label :description %>
   <%= f.text_field :description %> <br/>
+
+  <%= f.label :category %>
+  <%= f.select(:category, Category.all.to_a.map { |c| [c.title.titleize, c.id] }, {}, { class: '' } )%><br/>
   <br/>
   <br/>
   <%= f.submit 'Submit', class: 'btn btn-large btn-info' %>
