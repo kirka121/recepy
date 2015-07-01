@@ -1,8 +1,27 @@
-<%= form_for @recepy, remote: true do |f| %>
+<%= form_for setup_recepy(@recepy), remote: true do |f| %>
+  <%= f.label :title %>
   <%= f.text_field :title %> <br/>
-  <%= f.text_field :ingredients %> <br/>
+  <h4>Ingredients</h4>
+  <%= f.fields_for :ingredients  do |ff| %> <br/>
+    <div class="links">
+      <%= ff.label :description %>
+      <%= ff.text_field :description %> <br/>
+
+      <%= ff.label :quantity %>
+      <%= ff.text_field :quantity %> <br/>
+
+      <%= ff.label :quantity_type %>
+      <%= ff.text_field :quantity_type %> <br/>
+
+      <% if ff.object.persisted? %>
+        <%= ff.check_box :_destroy %>
+        <%= ff.label :_destroy, "Destroy" %>
+      <% end %>
+    </div>
+  <% end %>
+  <%= f.label :description %>
   <%= f.text_field :description %> <br/>
   <br/>
   <br/>
-  <%= f.submit %>
+  <%= f.submit 'Submit', class: 'btn btn-large btn-info' %>
 <% end %>

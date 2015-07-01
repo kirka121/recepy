@@ -49,6 +49,12 @@ class RecepiesController < ApplicationController
     @recepies = Recepy.all
   end
 
+  def show_categorized
+    sanity_checking(:id)
+    category = Category.find params[:id]
+    @recepies = category.recepies.all
+  end
+
   private
 
   def permitted_recepy_params

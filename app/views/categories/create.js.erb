@@ -1,0 +1,5 @@
+$(".form-modal").fadeOut('slow');
+$(".categories-container").fadeOut('slow', function(){
+  $(".categories-container").html("<%= escape_javascript(render partial: 'categories/partials/categories_index', locals: { categories: @categories }) %>");
+  $(".categories-container").fadeIn('slow');
+});

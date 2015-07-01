@@ -1,31 +1,16 @@
 <div id="sidebar-wrapper">
   <ul class="sidebar-nav">
     <li class="header">
-      <a href="#">
-        Recepies
-      </a>
+      <%= link_to 'All Recepies', recepies_path %>
     </li>
-    <li>
-        <a href="#">Dashboard</a>
+    <li class="header">
+      <%= link_to 'All Categories', categories_path %>
     </li>
-    <li>
-        <a href="#">Shortcuts</a>
-    </li>
-    <li>
-        <a href="#">Overview</a>
-    </li>
-    <li>
-        <a href="#">Events</a>
-    </li>
-    <li>
-        <a href="#">About</a>
-    </li>
-    <li>
-        <a href="#">Services</a>
-    </li>
-    <li>
-        <a href="#">Contact</a>
-    </li>
+    <% if categories.any? %>
+      <% categories.each do |category| %>
+        <li><%= link_to category.title.titleize, show_categorized_recepies_path(category), remote: true %></li>
+      <% end %>
+    <% end %>
   </ul>
 
   <a href='asdasdf' class='btn btn-large btn-default'>Test</a>

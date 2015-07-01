@@ -1,0 +1,8 @@
+<% if categories.any? %>
+  <h1> Categories </h1>
+  <% categories.each do |category| %>
+    <div class='category-container' id="<%= category.id %>">
+      <%= render partial: 'categories/partials/category_line_item', locals: { category: category } %>
+    </div>
+  <% end %>
+<% end %>

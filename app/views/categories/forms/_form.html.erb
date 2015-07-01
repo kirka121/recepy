@@ -1,0 +1,9 @@
+<%= form_for @category, remote: true do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br/>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br/>
+  <%= f.submit "Create Category", class: 'btn btn-large btn-info' %>
+<% end %>

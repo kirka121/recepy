@@ -1,4 +1,4 @@
-$(".form-create").fadeOut('slow');
+$(".form-modal").fadeOut('slow');
 $(".recepies-container").fadeOut('slow', function(){
   $(".recepies-container").html("<%= escape_javascript(render partial: 'recepies/partials/recepies_index', locals: { recepies: @recepies }) %>");
   $(".recepies-container").fadeIn('slow');

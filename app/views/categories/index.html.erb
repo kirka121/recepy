@@ -1,0 +1,5 @@
+ <%= link_to 'new category', new_category_path, remote: true %>
+
+ <div class='categories-container'>
+  <%= render partial: 'categories/partials/categories_index', locals: { categories: @categories } %>
+</div>
